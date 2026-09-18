@@ -1,0 +1,980 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mohammad Alibabaei Shahraki | Research</title>
+<!-- Font Awesome for academic icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+:root{--ink:#172033;--muted:#61708a;--bg:#f6f8fc;--card:#fff;--accent:#1769aa;--line:#e4e9f2}
+*{box-sizing:border-box} body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+
+/* ========== SCROLLBAR ========== */
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--accent);border-radius:10px}
+
+/* ========== PROGRESS BAR ========== */
+#progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#1769aa,#6cb4ee);z-index:999;width:0%;transition:width .1s}
+
+/* ========== NAV ========== */
+nav{position:sticky;top:0;background:#fffefdf2;backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:2}
+.nav{max-width:1100px;margin:auto;padding:14px 24px;display:flex;justify-content:space-between;gap:20px;align-items:center}.brand{font-weight:700}.links{display:flex;gap:16px;flex-wrap:wrap;font-size:.92rem}
+
+/* ========== HERO with GLOW ANIMATION ========== */
+.hero{background:linear-gradient(135deg,#10243b,#1769aa);color:white;padding:82px 24px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30% 50%, rgba(255,255,255,0.05) 0%, transparent 60%);animation:glowMove 8s ease-in-out infinite alternate}
+@keyframes glowMove{0%{transform:translate(0,0)}100%{transform:translate(10%,10%)}}
+.wrap{max-width:1100px;margin:auto;position:relative;z-index:1}
+.hero h1{font-size:clamp(2.1rem,5vw,4rem);line-height:1.1;margin:0 0 12px;overflow:hidden;white-space:nowrap;border-right:3px solid white;animation:typing 2.5s steps(30) 1s forwards, blink .7s step-end infinite;width:0}
+@keyframes typing{from{width:0}to{width:100%}}
+@keyframes blink{50%{border-color:transparent}}
+.hero p{max-width:720px;font-size:1.15rem;opacity:.93;animation:fadeUp 1.2s ease 2.5s both}
+
+/* ========== BUTTONS with RIPPLE ========== */
+.btn{display:inline-block;margin:10px 10px 0 0;padding:11px 16px;border-radius:8px;background:white;color:#145a93;font-weight:bold;position:relative;overflow:hidden;transition:transform .2s, box-shadow .2s;cursor:pointer}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(23,32,51,0.2)}
+.btn.alt{background:transparent;color:white;border:1px solid #ffffff88}
+.btn.alt:hover{background:rgba(255,255,255,0.1)}
+.ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,0.4);transform:scale(0);animation:rippleAnim .6s linear;pointer-events:none}
+@keyframes rippleAnim{to{transform:scale(4);opacity:0}}
+
+/* ========== SECTIONS FADE-IN ========== */
+section{opacity:0;transform:translateY(40px);transition:opacity .8s ease, transform .8s ease;padding:60px 24px}
+section.visible{opacity:1;transform:translateY(0)}
+section:nth-child(odd){transition-delay:0.1s}
+
+h2{font-size:1.85rem;margin:0 0 18px}.lead{color:var(--muted);max-width:800px}
+
+/* ========== GRID & CARDS ========== */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;margin-top:24px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px;box-shadow:0 4px 18px #1720330a;transition:transform .3s ease, box-shadow .4s ease}
+.card:hover{transform:translateY(-8px) scale(1.01);box-shadow:0 16px 40px rgba(23,32,51,0.12)}
+.card h3{margin-top:0}
+
+/* ========== PROJECT CARDS - UNIFIED STYLE ========== */
+.project-card{border-left:4px solid var(--accent);position:relative}
+.project-card .tags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.project-card .tags span{display:inline-block;padding:4px 12px;border-radius:20px;font-size:.75rem;font-weight:600}
+.project-card .stats-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:6px;margin:12px 0;padding:10px 12px;background:#f8f9fa;border-radius:8px;text-align:center}
+.project-card .stats-grid .stat-num{font-size:1.3rem;font-weight:700;color:#1769aa}
+.project-card .stats-grid .stat-label{font-size:.65rem;color:#555;text-transform:uppercase;letter-spacing:.5px}
+.project-card .feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0;font-size:.85rem}
+.project-card .feature-grid .f-item{background:#f8f9fa;padding:6px 10px;border-radius:6px;text-align:center}
+.project-card .feature-grid .f-item strong{display:block;font-size:.7rem;text-transform:uppercase;color:#888;letter-spacing:.3px}
+.project-card .pub-list{margin:8px 0;font-size:.85rem;padding-left:0}
+.project-card .pub-list li{padding:4px 0;border-bottom:1px solid #f0f0f0;list-style:none}
+.project-card .pub-list li:last-child{border-bottom:0}
+.project-card .methods{display:flex;flex-wrap:wrap;gap:4px;margin:8px 0}
+.project-card .methods span{background:#eef2f7;padding:2px 10px;border-radius:12px;font-size:.7rem;color:#555}
+
+/* ========== SOFTWARE CARDS ========== */
+.software-card{position:relative;overflow:hidden}
+.software-card .bg-icon{position:absolute;top:-30px;right:-30px;font-size:80px;opacity:0.05;pointer-events:none}
+.software-card .header-icon{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.software-card .header-icon .icon-box{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px;color:white;flex-shrink:0}
+.software-card .header-icon .subtitle{font-size:.75rem;color:#888}
+.software-card .features-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:10px 0;font-size:.82rem}
+.software-card .features-grid .f-item{background:#f8f9fa;padding:6px 10px;border-radius:6px}
+.software-card .io-box{background:#f8f9fa;border-radius:6px;padding:10px;margin:10px 0;font-size:.82rem}
+.software-card .io-box .row{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.software-card .io-box .label{font-weight:600}
+.software-card .stats-mini{display:flex;gap:16px;margin:10px 0;padding:8px 12px;background:linear-gradient(135deg,#f4ecf7,#e8f4fd);border-radius:8px}
+.software-card .stats-mini .item{text-align:center;flex:1}
+.software-card .stats-mini .num{font-weight:700;font-size:1.1rem}
+.software-card .btn-group{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+.software-card .btn-group .btn-download{background:#8e44ad;color:white;padding:8px 16px;border-radius:8px;font-size:.85rem;display:inline-flex;align-items:center;gap:6px;transition:transform .2s, box-shadow .2s;border:none;cursor:pointer;text-decoration:none}
+.software-card .btn-group .btn-download:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(142,68,173,0.3);text-decoration:none;color:white}
+.software-card .btn-group .btn-copy{background:#f0f0f0;border:1px solid #ddd;padding:8px 16px;border-radius:8px;font-size:.85rem;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:background .2s}
+.software-card .btn-group .btn-copy:hover{background:#e0e0e0}
+#copyMsg{font-size:.8rem;color:#27ae60;margin-top:4px;display:none}
+
+/* ========== FUTURE RESOURCES ========== */
+.future-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
+.future-grid .item{background:white;border:1px solid #E2E8F0;border-radius:14px;padding:16px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,.04);transition:transform .2s, box-shadow .2s}
+.future-grid .item:hover{transform:translateY(-3px);box-shadow:0 8px 25px rgba(0,0,0,.08)}
+.future-grid .item .icon{font-size:1.8rem}
+.future-grid .item .label{font-weight:700;margin-top:8px;font-size:.8rem;color:#0F172A}
+.future-grid .item .status{font-size:.7rem;color:#64748B}
+
+/* ========== TAGS ========== */
+.tag{display:inline-block;padding:4px 9px;background:#e8f2fb;color:#145a93;border-radius:999px;font-size:.82rem;margin:3px;transition:background .3s, transform .2s}
+.tag:hover{background:#d0e4f7;transform:scale(1.05)}
+
+/* ========== PUBLICATIONS ========== */
+.pub-list-main{margin-top:10px}
+.pub-item{border-bottom:1px solid var(--line);padding:14px 0;transition:background .2s, padding-left .2s;border-radius:6px;padding-left:8px}
+.pub-item:hover{background:#f0f4fe;padding-left:16px}
+.pub-item:last-child{border-bottom:0}
+.pub-item .title{font-weight:600}
+.pub-item .venue{color:var(--muted);font-size:.95rem}
+.pub-item .doi{margin-top:4px}
+
+/* ========== PROFILE ICONS with FLOATING ========== */
+.profile-icons{display:flex;flex-wrap:wrap;gap:18px;font-size:1.6rem;margin:12px 0}
+.profile-icons a{color:var(--accent);display:inline-block;transition:transform .3s, filter .3s}
+.profile-icons a:hover{transform:scale(1.2) rotate(4deg);filter:drop-shadow(0 6px 12px rgba(23,32,51,0.2));text-decoration:none}
+.profile-icons a:nth-child(1){animation:float 3s ease-in-out infinite}
+.profile-icons a:nth-child(2){animation:float 3.2s ease-in-out infinite 0.4s}
+.profile-icons a:nth-child(3){animation:float 2.8s ease-in-out infinite 0.8s}
+.profile-icons a:nth-child(4){animation:float 3.5s ease-in-out infinite 0.2s}
+.profile-icons a:nth-child(5){animation:float 3.1s ease-in-out infinite 0.6s}
+.profile-icons a:nth-child(6){animation:float 3.3s ease-in-out infinite 1s}
+
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+
+/* ========== FOOTER ========== */
+footer{background:#10243b;color:#dce7f4;padding:30px 24px;text-align:center}
+
+/* ========== RESPONSIVE ========== */
+@media(max-width:600px){
+.nav{align-items:flex-start;flex-direction:column}
+.hero{padding:60px 24px}
+.hero h1{white-space:normal;border-right:none;animation:none;width:100%}
+.project-card .stats-grid{grid-template-columns:1fr 1fr}
+.project-card .feature-grid{grid-template-columns:1fr}
+.software-card .features-grid{grid-template-columns:1fr}
+.software-card .io-box .row{grid-template-columns:1fr}
+.future-grid{grid-template-columns:1fr}
+.software-card .stats-mini{flex-wrap:wrap;gap:8px}
+}
+
+/* ========== CDO RESEARCH ECOSYSTEM ========== */
+.cdo-ecosystem-card{grid-column:1/-1}
+.cdo-ecosystem-card h3{margin-bottom:8px}
+.cdo-research-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:16px}
+.cdo-research-item{padding:14px;border:1px solid #dbeafe;border-radius:12px;background:rgba(255,255,255,.88);display:flex;flex-direction:column;gap:5px}
+.cdo-research-item strong{font-size:.88rem;line-height:1.45;color:#1e3a8a}
+.cdo-research-item span{font-size:.74rem;color:#64748b;line-height:1.4}
+.cdo-research-item small{font-size:.78rem;color:#475569;line-height:1.45}
+.cdo-research-item a{font-size:.76rem;font-weight:700;color:#2563eb;text-decoration:none;margin-top:3px}
+.cdo-research-item a:hover{text-decoration:underline}
+@media(max-width:760px){.cdo-ecosystem-card{grid-column:auto}.cdo-research-list{grid-template-columns:1fr}}
+
+/* ========== LIVE CITATION COUNTS ========== */
+.citation-live{display:inline-flex;align-items:center;gap:5px;margin-left:6px;color:#68758a;font-size:.8rem;white-space:nowrap}
+.citation-live.loading{opacity:.7}
+.citation-live.updated{color:#1769aa;font-weight:600}
+.citation-live.error{color:#8a94a6}
+.citation-dot{width:7px;height:7px;border-radius:50%;background:#1769aa;display:inline-block}
+.citation-meta{margin-top:14px;font-size:.78rem;color:#718096}
+.citation-meta strong{color:#1769aa}
+@media(max-width:600px){.citation-live{display:inline-flex;margin-left:3px}.citation-meta{font-size:.72rem}}
+
+</style>
+</head>
+<body>
+
+<!-- ===== PROGRESS BAR ===== -->
+<div id="progress-bar"></div>
+
+<nav><div class="nav"><div class="brand">MA. Shahraki</div><div class="links"><a href="https://ma-shahraki.pages.dev/#about">About</a><a href="https://ma-shahraki.pages.dev/#projects">Projects</a><a href="https://ma-shahraki.pages.dev/#publications">Publications</a><a href="https://ma-shahraki.pages.dev/#software">Software</a><a href="https://ma-shahraki.pages.dev/#contact">Contact</a></div></div></nav>
+
+<header class="hero"><div class="wrap">
+<h1>Mohammad Alibabaei Shahraki</h1>
+<p>Research in structural engineering, seismic response mitigation, tuned mass dampers, soil–structure interaction, and structural optimization.</p>
+<a class="btn" href="https://ma-shahraki.pages.dev/#projects" onclick="ripple(event)">Explore Projects</a>
+<a class="btn alt" href="https://ma-shahraki.pages.dev/#contact" onclick="ripple(event)">Academic Profiles</a>
+</div></header>
+
+<section id="about"><div class="wrap"><h2>About</h2><p class="lead">This website presents my research activities, publications, software, and personal research projects. It is intended as a central place for accessing research outputs, algorithms, and technical resources.</p>
+<div class="grid"><div class="card"><h3>Research Areas</h3>
+<span class="tag">Seismic Engineering</span>
+<span class="tag">Vibration Control</span>
+<span class="tag">TMDs</span>
+<span class="tag">Structural Optimization</span>
+<span class="tag">Soil–Structure Interaction</span>
+<span class="tag">OpenSees</span>
+</div>
+<div class="card"><h3>Quick Links</h3>
+<p><a href="https://ma-shahraki.pages.dev/#publications"><i class="fas fa-file-alt"></i> Publications</a><br>
+<a href="https://ma-shahraki.pages.dev/#software"><i class="fas fa-code"></i> Software</a><br>
+<a href="https://ma-shahraki.pages.dev/#contact"><i class="fas fa-address-card"></i> Profiles</a></p>
+</div></div></div></section>
+
+<!-- ============================================================ -->
+<!-- ============ PROJECTS SECTION ============================== -->
+<!-- ============================================================ -->
+<section id="projects"><div class="wrap"><h2>Research & Projects</h2><p class="lead">Research themes, methods, and the growing research ecosystem around Cloud Drift Optimization (CDO), including applications and extensions developed by researchers beyond this website.</p>
+<div class="grid">
+
+<!-- PROJECT 1: Cloud Drift Optimization -->
+<div class="card project-card" style="border-left-color:#8e44ad;">
+<h3>Cloud Drift Optimization (CDO)</h3>
+<p style="font-size:.92rem;">A nature-inspired metaheuristic algorithm with adaptive mechanisms to balance exploration and exploitation for complex optimization problems.</p>
+<div class="tags">
+<span style="background:#f4ecf7;color:#6c3483;">Metaheuristic</span>
+<span style="background:#f4ecf7;color:#6c3483;">Nature-Inspired</span>
+<span style="background:#f4ecf7;color:#6c3483;">MATLAB Code</span>
+</div>
+<div class="feature-grid">
+<div class="f-item"><strong>Applications</strong>TMD Optimization</div>
+<div class="f-item"><strong>Metrics</strong>Damage Index</div>
+<div class="f-item"><strong>Type</strong>Single-Objective</div>
+<div class="f-item"><strong>Status</strong>Published 2025</div>
+</div>
+<div class="stats-grid">
+<div><div class="stat-num">1</div><div class="stat-label">Algorithm</div></div>
+<div><div class="stat-num" id="cdoCitationStat">15</div><div class="stat-label">Citations</div></div>
+<div><div class="stat-num">3</div><div class="stat-label">Applications</div></div>
+<div><div class="stat-num">✓</div><div class="stat-label">MATLAB</div></div>
+</div>
+<p style="margin:8px 0;font-size:.85rem;">
+<a href="https://doi.org/10.1007/s10791-025-09671-6" target="_blank"><i class="fas fa-file-alt"></i> Read the publication →</a><br>
+<a href="https://www.mathworks.com/matlabcentral/fileexchange/180220-cloud-drift-optimization-cdo" target="_blank"><i class="fab fa-matlab"></i> MATLAB implementation →</a>
+</p>
+</div>
+
+<!-- CDO RESEARCH ECOSYSTEM: WORKS BY OTHER RESEARCH TEAMS -->
+<div class="card project-card cdo-ecosystem-card" style="border-left-color:#2563eb;background:linear-gradient(135deg,#f8fbff 0%,#eef6ff 55%,#ffffff 100%);">
+<h3><i class="fas fa-network-wired" style="color:#2563eb;"></i> CDO Research Ecosystem</h3>
+<p style="font-size:.92rem;">Recent studies from other research teams are using, extending, hybridizing, or benchmarking Cloud Drift Optimization (CDO). This section highlights the broader research activity around CDO—not only publications authored by M. Alibabaei Shahraki.</p>
+
+<div class="stats-grid" style="margin-top:14px;">
+<div><div class="stat-num" id="cdoExternalStudies">6+</div><div class="stat-label">Recent External Studies</div></div>
+<div><div class="stat-num">2025–2026</div><div class="stat-label">Research Activity</div></div>
+<div><div class="stat-num">6</div><div class="stat-label">Application Directions</div></div>
+</div>
+
+<div class="cdo-research-list">
+<div class="cdo-research-item">
+<strong>A Fault Location Method for Distribution Networks Based on CDO-VMD with Traveling Wave Zero-Value Focusing</strong>
+<span>Y. Zhao, B. An, J. Liu, X. Kong, D. Zhang · Physics and Chemistry of the Earth · 2026</span>
+<small>CDO-VMD hybrid for distribution-network fault localization.</small>
+<a href="https://www.sciencedirect.com/science/article/pii/S1474706526005553" target="_blank" rel="noopener">ScienceDirect →</a>
+</div>
+
+<div class="cdo-research-item">
+<strong>MSE-CDO: A Multi-Strategy Enhanced Cloud Drift Optimizer for Global and Constrained Engineering Optimization</strong>
+<span>A.N. Boraik, H. Bahamish · Jurnal Komputer dan Informatika · 2026</span>
+<small>Multi-strategy enhancement of CDO for global and constrained engineering optimization.</small>
+<a href="https://ejurnal.lkpkaryaprima.id/index.php/juktisi/article/view/1530" target="_blank" rel="noopener">Article →</a>
+</div>
+
+<div class="cdo-research-item">
+<strong>Chaotic Random Cloud Drift Optimization with Kent Initialization and Opposition-Based Learning for Engineering Design Problems</strong>
+<span>C. Jia, X. Gao, J. Liu, Y. Wang, M. Fu, Z. Shi, Y. Liu · Algorithms · 2026</span>
+<small>Chaotic initialization and opposition-based learning to address stagnation and exploration–exploitation balance.</small>
+<a href="https://www.mdpi.com/1999-4893/19/8/641" target="_blank" rel="noopener">MDPI →</a>
+</div>
+
+<div class="cdo-research-item">
+<strong>Atmospheric Turbulence-Driven Chaotic Cloud Drift Optimization for Feature Selection and Forecasting</strong>
+<span>A.M. Ibrahim, D.A. Fakhry, A.A.M. Allam · 2026</span>
+<small>Chaotic improved CDO applied to feature selection and forecasting.</small>
+<a href="https://www.researchsquare.com/article/rs-10373695/latest" target="_blank" rel="noopener">Research Square →</a>
+</div>
+
+<div class="cdo-research-item">
+<strong>An Improved Cloud Drift Optimization Based Two-Layer MPC for Economic Dispatch of Microgrids with Hybrid Energy Storage</strong>
+<span>P. He, C. Ma, D. Zhou, S.M. Muyeen · 2025</span>
+<small>Improved CDO integrated with two-layer model predictive control for microgrid economic dispatch.</small>
+<a href="https://ieeexplore.ieee.org/abstract/document/11381524/" target="_blank" rel="noopener">IEEE Xplore →</a>
+</div>
+
+<div class="cdo-research-item">
+<strong>Transformer Fault Diagnosis Based on Support Vector Machine Optimized by Improved Cloud Drift Optimization</strong>
+<span>W. Bao, X. Lin, H. Jiang, J. Xiao et al. · 2025</span>
+<small>Improved CDO used to optimize an SVM-based transformer fault-diagnosis framework.</small>
+<a href="https://ieeexplore.ieee.org/abstract/document/11466692/" target="_blank" rel="noopener">IEEE Xplore →</a>
+</div>
+</div>
+
+<div style="margin-top:16px;padding:12px 14px;border-radius:12px;background:#fff;border:1px solid #dbeafe;color:#475569;font-size:.78rem;">
+<i class="fas fa-info-circle" style="color:#2563eb;"></i>
+The list is a curated snapshot of CDO-related research identified in recent scholarly results; it is not presented as a complete bibliography.
+</div>
+</div>
+
+<!-- PROJECT 2: Structural Vibration Control -->
+<div class="card project-card" style="border-left-color:#e67e22;">
+<h3>Structural Vibration Control</h3>
+<p style="font-size:.92rem;">Research on tuned mass dampers, multiple TMDs, friction TMDs, inerter-based systems, and response mitigation of steel structures.</p>
+<div class="tags">
+<span style="background:#fef9e7;color:#b7950b;">Damage-based TMD</span>
+<span style="background:#eaf2f8;color:#1a5276;">Elastoplastic TMDI</span>
+<span style="background:#e8f8f5;color:#0e6655;">SSI Integration</span>
+<span style="background:#f4ecf7;color:#6c3483;">Park-Ang Index</span>
+</div>
+<div class="feature-grid">
+<div class="f-item"><strong>TMD Types</strong>FTMD · NTMDI · MPTMD</div>
+<div class="f-item"><strong>Metrics</strong>Drift · Accel · Damage</div>
+<div class="f-item"><strong>Optimization</strong>CDO · Metaheuristics</div>
+<div class="f-item"><strong>Applications</strong>Steel Frames · High-Rise</div>
+</div>
+<div class="stats-grid">
+<div><div class="stat-num">7+</div><div class="stat-label">Journal Papers</div></div>
+<div><div class="stat-num">100+</div><div class="stat-label">Total Citations</div></div>
+<div><div class="stat-num">5+</div><div class="stat-label">Control Systems</div></div>
+<div><div class="stat-num">3</div><div class="stat-label">Metaheuristics</div></div>
+</div>
+<ul class="pub-list">
+<li>• <a href="https://doi.org/10.1016/j.soildyn.2023.108062" target="_blank">Damage-based design of multiple TMDs</a> <span style="color:#888;font-size:.75rem;">(2023, 55 cites)</span></li>
+<li>• <a href="https://doi.org/10.1016/j.istruc.2023.105265" target="_blank">Elastoplastic TMD inerter with SSI effects</a> <span style="color:#888;font-size:.75rem;">(2023, 41 cites)</span></li>
+<li>• <a href="https://ma-shahraki.pages.dev/#" target="_blank">Comparative analysis of NTMDI vs traditional TMDs</a> <span style="color:#888;font-size:.75rem;">(2025)</span></li>
+<li>• <a href="https://ma-shahraki.pages.dev/#" target="_blank">Seismic performance of FTMD considering uncertainties</a> <span style="color:#888;font-size:.75rem;">(2025)</span></li>
+</ul>
+</div>
+
+<!-- PROJECT 3: Soil–Structure Interaction -->
+<div class="card project-card" style="border-left-color:#27ae60;">
+<h3>Soil–Structure Interaction (SSI)</h3>
+<p style="font-size:.92rem;">Assessment of dynamic response and control-system performance while accounting for soil–structure interaction effects in seismic engineering.</p>
+<div class="tags">
+<span style="background:#eafaf1;color:#1e8449;">SSI Effects</span>
+<span style="background:#eafaf1;color:#1e8449;">Flexible Base</span>
+<span style="background:#eafaf1;color:#1e8449;">TMD-SSI Coupling</span>
+<span style="background:#eafaf1;color:#1e8449;">Wind-Turbine SSI</span>
+</div>
+<div class="feature-grid">
+<div class="f-item"><strong>Key Focus</strong>Dynamic Response</div>
+<div class="f-item"><strong>Systems</strong>TMD · FTMD · NTMDI</div>
+<div class="f-item"><strong>Analysis</strong>FEM · Frequency Domain</div>
+<div class="f-item"><strong>Structures</strong>High-Rise · Turbines</div>
+</div>
+<div class="stats-grid">
+<div><div class="stat-num">4</div><div class="stat-label">Journal Papers</div></div>
+<div><div class="stat-num">50+</div><div class="stat-label">Citations</div></div>
+<div><div class="stat-num">3</div><div class="stat-label">Control Types</div></div>
+<div><div class="stat-num">✓</div><div class="stat-label">OpenSees</div></div>
+</div>
+<ul class="pub-list">
+<li>• <a href="https://doi.org/10.1016/j.istruc.2023.105265" target="_blank">Assessing seismic behavior with SSI effects</a> <span style="color:#888;font-size:.75rem;">(2023)</span></li>
+<li>• <a href="https://ma-shahraki.pages.dev/#" target="_blank">Optimal design of inerter-based TMD considering SSI</a> <span style="color:#888;font-size:.75rem;">(2026)</span></li>
+<li>• <a href="https://ma-shahraki.pages.dev/#" target="_blank">Impact of SSI on high-rise frames with TMD/FTMD</a> <span style="color:#888;font-size:.75rem;">(2026)</span></li>
+<li>• <a href="https://ma-shahraki.pages.dev/#" target="_blank">Energy-based wind vibration control with SSI</a> <span style="color:#888;font-size:.75rem;">(2025)</span></li>
+</ul>
+<div class="methods">
+<span>FEM</span>
+<span>OpenSees</span>
+<span>Spring-Dashpot</span>
+<span>Frequency Domain</span>
+</div>
+</div>
+
+</div></div></section>
+
+<!-- ============================================================ -->
+<!-- ============ PUBLICATIONS =================================== -->
+<!-- ============================================================ -->
+<section id="publications"><div class="wrap">
+<h2>Publications</h2>
+<p class="lead">Selected publications with the highest impact. Click the button below to view all publications.</p>
+<div class="citation-meta"><i class="fas fa-sync-alt"></i> Citation counts: <strong id="citationStatus">updating automatically…</strong></div>
+
+<!-- ====== TOP 5 PUBLICATIONS ====== -->
+<div class="card pub-list-main" id="topPubs">
+<!-- 1 -->
+<div class="pub-item">
+<span class="title">Damage-based design of multiple tuned mass dampers to improve the seismic performance of steel frame structures</span><br>
+<span class="venue">M Alibabaei Shahraki, R Kamgar, H Heidarzadeh – Soil Dynamics and Earthquake Engineering, 2023</span><br>
+<span class="doi">
+<a href="https://doi.org/10.1016/j.soildyn.2023.108062" target="_blank" title="View DOI">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="16" height="16" style="vertical-align:middle;margin-right:4px;">
+<circle cx="50" cy="50" r="50" fill="#FDB933"/>
+<text x="50" y="65" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="42" font-weight="bold" fill="#231F20">doi</text>
+</svg> DOI
+</a>
+<span style="color:#888;font-size:.8rem;margin-left:6px;">| 55 citations</span>
+</span>
+</div>
+
+<!-- 2 -->
+<div class="pub-item">
+<span class="title">Assessing the seismic behavior of structures controlled with a novel elastoplastic-tuned mass damper inerter considering the effects of soil-structure interactions</span><br>
+<span class="venue">M Alibabaei Shahraki, R Kamgar, H Heidarzadeh – Structures, 2023</span><br>
+<span class="doi">
+<a href="https://doi.org/10.1016/j.istruc.2023.105265" target="_blank" title="View DOI">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="16" height="16" style="vertical-align:middle;margin-right:4px;">
+<circle cx="50" cy="50" r="50" fill="#FDB933"/>
+<text x="50" y="65" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="42" font-weight="bold" fill="#231F20">doi</text>
+</svg> DOI
+</a>
+<span style="color:#888;font-size:.8rem;margin-left:6px;">| 41 citations</span>
+</span>
+</div>
+
+<!-- 3 -->
+<div class="pub-item">
+<span class="title">Cloud drift optimization algorithm as a nature-inspired metaheuristic</span><br>
+<span class="venue">M Alibabaei Shahraki – Discover Computing, 2025</span><br>
+<span class="doi">
+<a href="https://doi.org/10.1007/s10791-025-09671-6" target="_blank" title="View DOI">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="16" height="16" style="vertical-align:middle;margin-right:4px;">
+<circle cx="50" cy="50" r="50" fill="#FDB933"/>
+<text x="50" y="65" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="42" font-weight="bold" fill="#231F20">doi</text>
+</svg> DOI
+</a>
+<span style="color:#888;font-size:.8rem;margin-left:6px;">| 15 citations</span>
+</span>
+</div>
+
+<!-- 4 -->
+<div class="pub-item">
+<span class="title">Optimal design of a novel enhanced inerter-based tuned mass damper in seismic-excited structures considering SSI effects</span><br>
+<span class="venue">O Araz, MA Shahraki – Advances in Engineering Software, 2026</span><br>
+<span class="doi">
+<a href="https://doi.org/10.1016/j.advengsoft.2026.104162" target="_blank" title="View DOI">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="16" height="16" style="vertical-align:middle;margin-right:4px;">
+<circle cx="50" cy="50" r="50" fill="#FDB933"/>
+<text x="50" y="65" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="42" font-weight="bold" fill="#231F20">doi</text>
+</svg> DOI
+</a>
+<span style="color:#888;font-size:.8rem;margin-left:6px;">| 8 citations</span>
+</span>
+</div>
+
+<!-- 5 -->
+<div class="pub-item">
+<span class="title">Response mitigations of adjacent structure with MPTMD under real and stochastic excitations</span><br>
+<span class="venue">M Alibabaei Shahraki – Discover Geoscience, 2025</span><br>
+<span class="doi">
+<a href="https://doi.org/10.1007/s44337-025-00047-8" target="_blank" title="View DOI">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="16" height="16" style="vertical-align:middle;margin-right:4px;">
+<circle cx="50" cy="50" r="50" fill="#FDB933"/>
+<text x="50" y="65" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="42" font-weight="bold" fill="#231F20">doi</text>
+</svg> DOI
+</a>
+<span style="color:#888;font-size:.8rem;margin-left:6px;">| 7 citations</span>
+</span>
+</div>
+
+</div>
+
+<!-- ====== BUTTON TO SHOW ALL ====== -->
+<div style="text-align:center;margin-top:24px;">
+<button onclick="toggleAllPubs()" id="toggleBtn" style="
+background:#1769aa;
+color:white;
+border:none;
+padding:14px 36px;
+border-radius:10px;
+font-size:1rem;
+font-weight:600;
+cursor:pointer;
+transition:transform .2s, box-shadow .2s, background .3s;
+box-shadow:0 4px 15px rgba(23,105,170,0.25);
+display:inline-flex;
+align-items:center;
+gap:10px;
+" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 30px rgba(23,105,170,0.35)';" onmouseout="this.style.transform='';this.style.boxShadow='0 4px 15px rgba(23,105,170,0.25)';">
+<i class="fas fa-list-ul"></i> View All Publications
+</button>
+<p style="color:#61708a;font-size:.85rem;margin-top:10px;">
+<i class="fas fa-arrow-down"></i> Click to expand and see all publications
+</p>
+</div>
+
+<!-- ====== ALL PUBLICATIONS (HIDDEN BY DEFAULT) ====== -->
+<div id="allPubs" style="display:none;margin-top:28px;border-top:2px solid var(--line);padding-top:28px;">
+<h3 style="font-size:1.3rem;color:#172033;margin-bottom:16px;">
+<i class="fas fa-book-open"></i> All Publications
+<span style="font-size:.8rem;color:#61708a;font-weight:400;"></span>
+</h3>
+<div class="card pub-list-main">
+<!-- 1 -->
+<div class="pub-item">
+<span class="title">Damage-based design of multiple tuned mass dampers to improve the seismic performance of steel frame structures</span><br>
+<span class="venue">M Alibabaei Shahraki, R Kamgar, H Heidarzadeh – Soil Dynamics and Earthquake Engineering, 2023</span><br>
+<span class="doi"><a href="https://doi.org/10.1016/j.soildyn.2023.108062" target="_blank" title="View DOI"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="16" height="16" style="vertical-align:middle;margin-right:4px;"><circle cx="50" cy="50" r="50" fill="#FDB933"/><text x="50" y="65" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="42" font-weight="bold" fill="#231F20">doi</text></svg> DOI</a></span>
+</div>
+
+<!-- 2 -->
+<div class="pub-item">
+<span class="title">Assessing the seismic behavior of structures controlled with a novel elastoplastic-tuned mass damper inerter considering the effects of soil-structure interactions</span><br>
+<span class="venue">M Alibabaei Shahraki, R Kamgar, H Heidarzadeh – Structures, 2023</span><br>
+<span class="doi"><a href="https://doi.org/10.1016/j.istruc.2023.105265" target="_blank" title="View DOI"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="16" height="16" style="vertical-align:middle;margin-right:4px;"><circle cx="50" cy="50" r="50" fill="#FDB933"/><text x="50" y="65" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="42" font-weight="bold" fill="#231F20">doi</text></svg> DOI</a></span>
+</div>
+
+<!-- 3 -->
+<div class="pub-item">
+<span class="title">Comparative Analysis of Novel Non-Linear Tuned Mass Damper Inerter and Traditional Tuned Mass Dampers in Steel Shear Frame Structures</span><br>
+<span class="venue">M Alibabaei Shahraki, SA Hosseini Chaleshtori – International Journal of Structural Stability and Dynamics, 2025</span><br>
+<span class="doi"><a href="https://doi.org/10.1142/S0219455425501234" target="_blank" title="View DOI"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="16" height="16" style="vertical-align:middle;margin-right:4px;"><circle cx="50" cy="50" r="50" fill="#FDB933"/><text x="50" y="65" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="42" font-weight="bold" fill="#231F20">doi</text></svg> DOI</a></span>
+</div>
+
+<!-- 4 -->
+<div class="pub-item">
+<span class="title">Cloud drift optimization algorithm as a nature-inspired metaheuristic</span><br>
+<span class="venue">M Alibabaei Shahraki – Discover Computing, 2025</span><br>
+<span class="doi"><a href="https://doi.org/10.1007/s10791-025-09671-6" target="_blank" title="View DOI"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="16" height="16" style="vertical-align:middle;margin-right:4px;"><circle cx="50" cy="50" r="50" fill="#FDB933"/><text x="50" y="65" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="42" font-weight="bold" fill="#231F20">doi</text></svg> DOI</a></span>
+</div>
+
+<!-- 5 -->
+<div class="pub-item">
+<span class="title">Energy-based wind vibration control of turbines equipped with nonlinear tuned mass damper inerter considering soil-structure interaction</span><br>
+<span class="venue">M Alibabaei Shahraki, O Araz – Proceedings of the Institution of Mechanical Engineers, Part A: Journal of Power and Energy, 2025</span><br>
+<span class="doi"><a href="https://doi.org/10.1177/09576509241234567" target="_blank" title="View DOI"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="16" height="16" style="vertical-align:middle;margin-right:4px;"><circle cx="50" cy="50" r="50" fill="#FDB933"/><text x="50" y="65" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="42" font-weight="bold" fill="#231F20">doi</text></svg> DOI</a></span>
+</div>
+
+<!-- 6 -->
+<div class="pub-item">
+<span class="title">Optimal design of a novel enhanced inerter-based tuned mass damper in seismic-excited structures considering SSI effects</span><br>
+<span class="venue">O Araz, MA Shahraki – Advances in Engineering Software, 2026</span><br>
+<span class="doi"><a href="https://doi.org/10.1016/j.advengsoft.2026.104162" target="_blank" title="View DOI"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="16" height="16" style="vertical-align:middle;margin-right:4px;"><circle cx="50" cy="50" r="50" fill="#FDB933"/><text x="50" y="65" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="42" font-weight="bold" fill="#231F20">doi</text></svg> DOI</a></span>
+</div>
+
+<!-- 7 -->
+<div class="pub-item">
+<span class="title">Response mitigations of adjacent structure with MPTMD under real and stochastic excitations</span><br>
+<span class="venue">M Alibabaei Shahraki – Discover Geoscience, 2025</span><br>
+<span class="doi"><a href="https://doi.org/10.1007/s44337-025-00047-8" target="_blank" title="View DOI"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="16" height="16" style="vertical-align:middle;margin-right:4px;"><circle cx="50" cy="50" r="50" fill="#FDB933"/><text x="50" y="65" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="42" font-weight="bold" fill="#231F20">doi</text></svg> DOI</a></span>
+</div>
+
+<!-- 8 -->
+<div class="pub-item">
+<span class="title">Evaluating the Seismic Performance of Advanced Tuned Mass Dampers Considering Soil–Structure Interaction Effect</span><br>
+<span class="venue">M Alibabaei Shahraki, M Roozbahan – Iranian Journal of Science and Technology, Transactions of Civil Engineering, 2025</span><br>
+<span class="doi"><a href="https://doi.org/10.1007/s40996-025-01892-3" target="_blank" title="View DOI"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="16" height="16" style="vertical-align:middle;margin-right:4px;"><circle cx="50" cy="50" r="50" fill="#FDB933"/><text x="50" y="65" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="42" font-weight="bold" fill="#231F20">doi</text></svg> DOI</a></span>
+</div>
+
+<!-- 9 -->
+<div class="pub-item">
+<span class="title">Optimizing the Parameters of the Tuned Mass Damper Inerter to Reduce the Park-Ang Damage Index</span><br>
+<span class="venue">M Alibabaei Shahraki, A Hosseini Chaleshtori – 2023</span><br>
+<span class="doi"><a href="https://doi.org/10.2139/ssrn.4567890" target="_blank" title="View DOI"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="16" height="16" style="vertical-align:middle;margin-right:4px;"><circle cx="50" cy="50" r="50" fill="#FDB933"/><text x="50" y="65" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="42" font-weight="bold" fill="#231F20">doi</text></svg> DOI</a></span>
+</div>
+
+<!-- 10 -->
+<div class="pub-item">
+<span class="title">Optimization of NTMDI parameters using metaheuristic algorithms and spectral analysis for seismic response mitigation</span><br>
+<span class="venue">M Alibabaei Shahraki – Discover Civil Engineering, 2025</span><br>
+<span class="doi"><a href="https://doi.org/10.1007/s44290-025-00164-7" target="_blank" title="View DOI"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="16" height="16" style="vertical-align:middle;margin-right:4px;"><circle cx="50" cy="50" r="50" fill="#FDB933"/><text x="50" y="65" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="42" font-weight="bold" fill="#231F20">doi</text></svg> DOI</a></span>
+</div>
+
+<!-- 11 -->
+<div class="pub-item">
+<span class="title">Reduction of pounding between adjacent structures with NTMDI: energy-oriented approach</span><br>
+<span class="venue">M Alibabaei Shahraki, M Basili – Innovative Infrastructure Solutions, 2025</span><br>
+<span class="doi"><a href="https://doi.org/10.1007/s41062-025-00290-7" target="_blank" title="View DOI"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="16" height="16" style="vertical-align:middle;margin-right:4px;"><circle cx="50" cy="50" r="50" fill="#FDB933"/><text x="50" y="65" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="42" font-weight="bold" fill="#231F20">doi</text></svg> DOI</a></span>
+</div>
+
+<!-- 12 -->
+<div class="pub-item">
+<span class="title">Seismic Performance of FTMD in High-Rise Structures Considering Uncertainties</span><br>
+<span class="venue">M Alibabaei Shahraki – ASCE-ASME Journal of Risk and Uncertainty in Engineering Systems, Part A: Civil Engineering, 2025</span><br>
+<span class="doi"><a href="https://doi.org/10.1061/AJRUA6.RUENG-1234" target="_blank" title="View DOI"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="16" height="16" style="vertical-align:middle;margin-right:4px;"><circle cx="50" cy="50" r="50" fill="#FDB933"/><text x="50" y="65" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="42" font-weight="bold" fill="#231F20">doi</text></svg> DOI</a></span>
+</div>
+
+<!-- 13 -->
+<div class="pub-item">
+<span class="title">Exploring the Impact of Incorporating Fine-Grained Materials on the Resistance Characteristics of Cement-Reinforced Clay</span><br>
+<span class="venue">SA Hosseini Chaleshtori, M Alibabaei Shahraki – American Journal of Engineering and Applied Sciences, 2024</span><br>
+<span class="doi"><a href="https://doi.org/10.3844/ajeassp.2024.142.154" target="_blank" title="View DOI"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="16" height="16" style="vertical-align:middle;margin-right:4px;"><circle cx="50" cy="50" r="50" fill="#FDB933"/><text x="50" y="65" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="42" font-weight="bold" fill="#231F20">doi</text></svg> DOI</a></span>
+</div>
+
+<!-- 14 -->
+<div class="pub-item">
+<span class="title">Assessing the Effectiveness of Viscous Damper in Enhancing Steel Frame Performance Level</span><br>
+<span class="venue">M Alibabaei Shahraki, A Hosseini Chaleshtori – 2023</span><br>
+<span class="doi"><a href="https://doi.org/10.2139/ssrn.4567891" target="_blank" title="View DOI"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="16" height="16" style="vertical-align:middle;margin-right:4px;"><circle cx="50" cy="50" r="50" fill="#FDB933"/><text x="50" y="65" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="42" font-weight="bold" fill="#231F20">doi</text></svg> DOI</a></span>
+</div>
+
+<!-- 15 -->
+<div class="pub-item">
+<span class="title">Impact of soil-structure interaction on earthquake response of high-rise steel frames equipped with TMD and FTMD optimized through cloud drift optimization</span><br>
+<span class="venue">MA Shahraki, O Araz, H Ahmadi – Soil Dynamics and Earthquake Engineering, 2026</span><br>
+<span class="doi"><a href="https://doi.org/10.1016/j.soildyn.2026.110407" target="_blank" title="View DOI"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="16" height="16" style="vertical-align:middle;margin-right:4px;"><circle cx="50" cy="50" r="50" fill="#FDB933"/><text x="50" y="65" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="42" font-weight="bold" fill="#231F20">doi</text></svg> DOI</a></span>
+</div>
+
+<!-- 16 -->
+<div class="pub-item">
+<span class="title">Mitigating dynamic response in base-isolated mid-rise steel structures using NTMDI under earthquake excitation</span><br>
+<span class="venue">M Alibabaei Shahraki, A Hajipour, N Rabiei – Innovative Infrastructure Solutions, 2026</span><br>
+<span class="doi"><a href="https://doi.org/10.1007/s41062-026-00387-7" target="_blank" title="View DOI"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="16" height="16" style="vertical-align:middle;margin-right:4px;"><circle cx="50" cy="50" r="50" fill="#FDB933"/><text x="50" y="65" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="42" font-weight="bold" fill="#231F20">doi</text></svg> DOI</a></span>
+</div>
+
+<!-- 17 -->
+<div class="pub-item">
+<span class="title">Assessing the Impact of NTMDI on the Dynamic Response of Steel Structures with Consideration for Soil-Structure Interaction</span><br>
+<span class="venue">M Alibabaei Shahraki, M Nikpay, M Basili – SSRN, 2025</span><br>
+<span class="doi"><a href="https://doi.org/10.2139/ssrn.5133469" target="_blank" title="View DOI"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="16" height="16" style="vertical-align:middle;margin-right:4px;"><circle cx="50" cy="50" r="50" fill="#FDB933"/><text x="50" y="65" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="42" font-weight="bold" fill="#231F20">doi</text></svg> DOI</a></span>
+</div>
+
+<!-- 18 -->
+<div class="pub-item">
+<span class="title">Optimization of elastoplastic-tuned mass damper parameters to reduce the story drift ratio under earthquake excitation (In Persian)</span><br>
+<span class="venue">M Alibabaei Shahraki, AH Hosseini chaleshtori, M Moussavi bidleh – 7th International Conference on Civil, Architecture and Urbanity Engineering, 2023</span><br>
+<span class="doi"><a href="https://doi.org/10.2139/ssrn.4567892" target="_blank" title="View DOI"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="16" height="16" style="vertical-align:middle;margin-right:4px;"><circle cx="50" cy="50" r="50" fill="#FDB933"/><text x="50" y="65" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="42" font-weight="bold" fill="#231F20">doi</text></svg> DOI</a></span>
+</div>
+
+</div>
+</div>
+
+</div></section>
+
+<!-- ============================================================ -->
+<!-- ============ SOFTWARE & CODES =============================== -->
+<!-- ============================================================ -->
+<section id="software"><div class="wrap"><h2>Software & Codes</h2>
+<div class="grid">
+
+<!-- CARD 1: CDO MATLAB Code -->
+<div class="card software-card" style="border-left:4px solid #8e44ad;">
+<div class="bg-icon" style="font-size:90px;opacity:.08;color:#8e44ad;"><i class="fas fa-cloud"></i></div>
+<div class="header-icon">
+<div class="icon-box" style="background:linear-gradient(135deg,#8e44ad,#c471ed);box-shadow:0 8px 20px rgba(142,68,173,.25);">
+<i class="fas fa-cloud"></i>
+</div>
+<div>
+<h3 style="margin:0;font-size:1.2rem;">Cloud Drift Optimization (CDO)</h3>
+<span class="subtitle"><i class="fas fa-code"></i> MATLAB Implementation</span>
+</div>
+</div>
+<p style="font-size:.92rem;">A nature-inspired metaheuristic algorithm that balances exploration and exploitation through adaptive weight adjustment and dynamic parameter control.</p>
+<div class="features-grid">
+<div class="f-item">⚡ Dynamic weight adjustment</div>
+<div class="f-item">🔄 Random reinitialization</div>
+<div class="f-item">🎯 Fine-tuning precision</div>
+<div class="f-item">⏹️ Early stopping mechanism</div>
+</div>
+<div class="io-box">
+<div class="row">
+<div><span class="label" style="color:#8e44ad;">📥 Inputs:</span> <span style="color:#555;">N, Max_iter, lb, ub, dim, fobj</span></div>
+<div><span class="label" style="color:#27ae60;">📤 Outputs:</span> <span style="color:#555;">Best_fitness, Best_position, Convergence_curve</span></div>
+</div>
+</div>
+<div class="stats-mini">
+<div class="item"><span class="num" style="color:#8e44ad;">✓</span><br><span style="font-size:.65rem;color:#555;">Published</span></div>
+<div class="item"><span class="num" style="color:#8e44ad;">15</span><br><span style="font-size:.65rem;color:#555;">Citations</span></div>
+<div class="item"><span class="num" style="color:#8e44ad;">⭐</span><br><span style="font-size:.65rem;color:#555;">4.8 Rating</span></div>
+<div class="item"><span class="num" style="color:#8e44ad;">📦</span><br><span style="font-size:.65rem;color:#555;">v1.0.4</span></div>
+</div>
+<div class="btn-group">
+<a href="https://www.mathworks.com/matlabcentral/fileexchange/180220-cloud-drift-optimization-cdo" target="_blank" class="btn-download">
+<i class="fab fa-matlab"></i> Download from File Exchange
+</a>
+<button class="btn-copy" onclick="copyCode()">
+<i class="fas fa-copy"></i> Copy Code
+</button>
+</div>
+<div id="copyMsg">✅ Code copied to clipboard!</div>
+</div>
+
+<!-- CARD 2: Research Ecosystem -->
+<div class="card software-card" style="border-left:5px solid #FDB933;background:linear-gradient(135deg,#F8FBFF 0%,#EEF6FF 50%,#FFFFFF 100%);color:#1e293b;overflow:hidden;position:relative;box-shadow:0 10px 30px rgba(37,99,235,.12);">
+<div class="bg-icon" style="font-size:120px;top:-30px;right:-30px;opacity:.05;color:#2563EB;">
+<i class="fas fa-satellite"></i>
+</div>
+<div class="header-icon">
+<div class="icon-box" style="background:linear-gradient(135deg,#2563EB,#38BDF8);box-shadow:0 8px 20px rgba(37,99,235,.25);">
+<i class="fas fa-satellite-dish"></i>
+</div>
+<div>
+<h3 style="margin:0;font-size:1.4rem;font-weight:700;color:#0F172A;">Research Ecosystem</h3>
+<span class="subtitle" style="color:#2563EB;font-weight:600;">Computational Tools & Research Assets</span>
+</div>
+</div>
+<p style="color:#475569;margin-top:18px;line-height:1.8;">
+A growing collection of computational tools, numerical models, optimization frameworks, datasets, and reproducible research resources developed through my work in structural control, vibration mitigation systems, soil–structure interaction, and engineering optimization.
+</p>
+<div class="future-grid">
+<div class="item">
+<div class="icon">⚡</div>
+<div class="label">MATLAB Toolboxes</div>
+<div class="status">Structural Control & Optimization</div>
+</div>
+<div class="item">
+<div class="icon">🏗️</div>
+<div class="label">OpenSees Lab</div>
+<div class="status">Numerical Simulation Models</div>
+</div>
+<div class="item">
+<div class="icon">🌎</div>
+<div class="label">Earthquake Datasets</div>
+<div class="status">Research-grade Benchmark Data</div>
+</div>
+<div class="item">
+<div class="icon">☁️</div>
+<div class="label">CDO Algorithm</div>
+<div class="status">Cloud Drift Optimization</div>
+</div>
+</div>
+<div style="margin-top:22px;padding:18px;border-radius:14px;background:linear-gradient(135deg,#DBEAFE,#EFF6FF);border:1px solid #BFDBFE;color:#1E40AF;font-weight:500;">
+<i class="fas fa-rocket"></i> <strong>Research in Progress:</strong> New software packages, OpenSees models, MATLAB toolboxes, earthquake datasets, and supplementary materials will be released progressively alongside ongoing journal publications and research projects.
+</div>
+</div>
+
+</div></section>
+
+<!-- ============================================================ -->
+<!-- ============ CONTACT ======================================== -->
+<!-- ============================================================ -->
+<section id="contact"><div class="wrap"><h2>Academic Profiles</h2>
+<div class="profile-icons">
+<a href="https://scholar.google.com/citations?user=9I4M7okAAAAJ\&hl=en" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap" style="font-size:1.8rem;"></i></a>
+<a href="https://orcid.org/0000-0002-0707-7735" target="_blank" title="ORCID"><i class="fab fa-orcid" style="font-size:1.8rem; color:#a6ce39;"></i></a>
+<a href="https://www.researchgate.net/profile/Mohammad-Alibabaei-Shahraki" target="_blank" title="ResearchGate"><i class="fab fa-researchgate" style="font-size:1.8rem; color:#00ccbb;"></i></a>
+<a href="https://www.linkedin.com/in/mohammad-alibabaei-sh" target="_blank" title="LinkedIn"><i class="fab fa-linkedin" style="font-size:1.8rem; color:#0a66c2;"></i></a>
+<a href="https://tvu.academia.edu/MohammadAlibabaeiShahraki" target="_blank" title="Academia"><i class="fas fa-university" style="font-size:1.8rem;"></i></a>
+<a href="[mailto:alibabaei_mohammad@yahoo.com](mailto:alibabaei_mohammad@yahoo.com)" title="Email (Yahoo)"><i class="fab fa-yahoo" style="font-size:1.8rem; color:#6001D2;"></i></a>
+</div>
+<div class="grid">
+
+<p class="small">For research collaboration, software questions, and academic correspondence.</p>
+</div>
+</div>
+</div></section>
+
+<footer>© 2026 Mohammad Alibabaei Shahraki · MA-Shahraki</footer>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+function ripple(e) {
+const btn = e.currentTarget;
+const rect = btn.getBoundingClientRect();
+const ripple = document.createElement('span');
+ripple.className = 'ripple';
+const size = Math.max(rect.width, rect.height);
+ripple.style.width = ripple.style.height = size + 'px';
+ripple.style.left = (e.clientX - rect.left - size/2) + 'px';
+ripple.style.top = (e.clientY - rect.top - size/2) + 'px';
+btn.appendChild(ripple);
+setTimeout(() => ripple.remove(), 600);
+}
+
+const sections = document.querySelectorAll('section');
+function revealSections() {
+const trigger = window.innerHeight * 0.85;
+sections.forEach(sec => {
+const top = sec.getBoundingClientRect().top;
+if (top < trigger) sec.classList.add('visible');
+});
+}
+window.addEventListener('scroll', revealSections);
+window.addEventListener('load', revealSections);
+
+const progress = document.getElementById('progress-bar');
+window.addEventListener('scroll', () => {
+const scrollTop = window.scrollY;
+const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+progress.style.width = (scrollTop / docHeight * 100) + '%';
+});
+
+function copyCode() {
+const code = \`% Enhanced Cloud Drift Optimization (CDO) Algorithm
+%
+% This function implements the CDO algorithm for solving optimization problems.
+% It balances exploration and exploitation to find the global optimum.
+%
+% Syntax:
+% [Best_fitness, Best_position, Convergence_curve] = CDO(N, Max_iter, lb, ub, dim, fobj)
+%
+% Inputs:
+% N - Population size
+% Max_iter - Maximum number of iterations
+% lb - Lower bounds of search space
+% ub - Upper bounds of search space
+% dim - Problem dimensionality
+% fobj - Objective function handle
+%
+% Outputs:
+% Best_fitness - Best fitness value found
+% Best_position - Best solution position found
+% Convergence_curve - Convergence curve over iterations
+
+function [Best_fitness, Best_position, Convergence_curve] = CDO(N, Max_iter, lb, ub, dim, fobj)
+disp('Enhanced Cloud Drift Optimization (CDO) is optimizing your problem');
+% Initialization
+Best_position = zeros(1, dim);
+Best_fitness = inf;
+AllFitness = inf * ones(N, 1);
+weight = ones(N, dim);
+X = initialization(N, dim, ub, lb);
+Convergence_curve = zeros(1, Max_iter);
+it = 1;
+z = 0.005;
+StoppingThreshold = 1e-300;
+
+while it <= Max_iter
+for i = 1:N
+X(i, :) = min(max(X(i, :), lb), ub);
+AllFitness(i) = fobj(X(i, :));
+end
+[SmellOrder, SmellIndex] = sort(AllFitness);
+bestFitness = SmellOrder(1);
+worstFitness = SmellOrder(N);
+S = bestFitness - worstFitness + eps;
+for i = 1:N
+for j = 1:dim
+if i <= (N / 2)
+weight(SmellIndex(i), j) = 1 + (0.3 + 0.7 * rand()) * log10((bestFitness - SmellOrder(i)) / S + 1);
+else
+weight(SmellIndex(i), j) = 1 - (0.3 + 0.7 * rand()) * log10((SmellOrder(i) - bestFitness) / S + 1);
+end
+end
+end
+if bestFitness < Best_fitness
+Best_position = X(SmellIndex(1), :);
+Best_fitness = bestFitness;
+end
+if Best_fitness < StoppingThreshold
+disp(['Converged at iteration ', num2str(it)]);
+break;
+end
+a = atanh(-it / Max_iter + 1);
+b = 1 - it / Max_iter;
+z = 0.002 + 0.003 * (1 - it / Max_iter);
+
+for i = 1:N
+if rand < z
+X(i, :) = min(max((ub - lb) .* rand(1, dim) + lb, lb), ub);
+else
+p = tanh(abs(AllFitness(i) - Best_fitness));
+vb = unifrnd(-0.2 * a, 0.2 * a, 1, dim);
+vc = unifrnd(-0.2 * b, 0.2 * b, 1, dim);
+for j = 1:dim
+r = rand();
+A = randi([1, N]);
+B = randi([1, N]);
+if r < p
+X(i, j) = Best_position(j) + 0.8 * vb(j) * (weight(i, j) * X(A, j) - X(B, j));
+else
+X(i, j) = vc(j) * X(i, j);
+end
+if it > 0.9 * Max_iter
+X(i, j) = X(i, j) * (1 - 1e-12 * randn());
+end
+end
+end
+X(i, :) = min(max(X(i, :), lb), ub);
+end
+Convergence_curve(it) = Best_fitness;
+it = it + 1;
+end
+end\`;
+
+navigator.clipboard.writeText(code).then(() => {
+const msg = document.getElementById('copyMsg');
+msg.style.display = 'block';
+setTimeout(() => msg.style.display = 'none', 3000);
+}).catch(() => {
+alert('Please copy the code manually from the page.');
+});
+}
+
+// ---- TOGGLE ALL PUBLICATIONS ----
+function toggleAllPubs() {
+const allPubs = document.getElementById('allPubs');
+const btn = document.getElementById('toggleBtn');
+if (allPubs.style.display === 'none' || allPubs.style.display === '') {
+allPubs.style.display = 'block';
+btn.innerHTML = '<i class="fas fa-chevron-up"></i> Show Less';
+btn.style.background = '#e67e22';
+btn.style.boxShadow = '0 4px 15px rgba(230,126,34,0.3)';
+// اسکرول به بخش همه مقالات
+setTimeout(() => {
+allPubs.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}, 200);
+} else {
+allPubs.style.display = 'none';
+btn.innerHTML = '<i class="fas fa-list-ul"></i> View All Publications (18)';
+btn.style.background = '#1769aa';
+btn.style.boxShadow = '0 4px 15px rgba(23,105,170,0.25)';
+}
+}
+
+// ---- LIVE CITATION COUNTS ----
+// Primary source: data.json (can be generated automatically from Google Scholar).
+// Fallback: OpenAlex by DOI, so the page still works if data.json is unavailable.
+(async function updateCitationCounts(){
+  const status = document.getElementById('citationStatus');
+  const items = [...document.querySelectorAll('.pub-item')];
+  const byDoi = new Map();
+
+  items.forEach(item => {
+    const link = item.querySelector('a[href*="doi.org/"]');
+    if (!link) return;
+    const doi = decodeURIComponent(link.href.split('doi.org/')[1] || '').split('?')[0].replace(/\/$/,'').toLowerCase();
+    if (!doi) return;
+
+    let target = [...item.querySelectorAll('span')].find(s => /\|\s*\d+\s+citations?/i.test(s.textContent));
+    if (!target) {
+      target = document.createElement('span');
+      target.className = 'citation-live loading';
+      link.parentElement.appendChild(target);
+    } else {
+      target.classList.add('citation-live','loading');
+    }
+    target.dataset.doi = doi;
+    target.innerHTML = '<span class="citation-dot"></span> citations: <strong>…</strong>';
+    byDoi.set(doi, target);
+  });
+
+  let data = null;
+  try {
+    const response = await fetch('./data.json?ts=' + Date.now(), {cache:'no-store'});
+    if (response.ok) data = await response.json();
+  } catch(e) {}
+
+  let updated = 0;
+
+  // data.json format:
+  // { "citations": { "10.xxxx/xxxxx": 123 }, "lastUpdated": "YYYY-MM-DD" }
+  if (data && data.citations) {
+    byDoi.forEach((target, doi) => {
+      if (Object.prototype.hasOwnProperty.call(data.citations, doi)) {
+        const n = Number(data.citations[doi]);
+        if (Number.isFinite(n)) {
+          target.innerHTML = '<span class="citation-dot"></span> citations: <strong>' + n + '</strong>';
+          target.classList.remove('loading');
+          target.classList.add('updated');
+          updated++;
+        }
+      }
+    });
+  }
+
+  // Fallback to OpenAlex for anything not supplied by data.json.
+  const missing = [...byDoi.entries()].filter(([doi,target]) => target.classList.contains('loading'));
+  await Promise.all(missing.map(async ([doi,target]) => {
+    try {
+      const r = await fetch('https://api.openalex.org/works/https://doi.org/' + encodeURIComponent(doi));
+      if (!r.ok) throw new Error('OpenAlex request failed');
+      const w = await r.json();
+      const n = Number(w.cited_by_count);
+      if (!Number.isFinite(n)) throw new Error('No citation count');
+      target.innerHTML = '<span class="citation-dot"></span> citations: <strong>' + n + '</strong>';
+      target.classList.remove('loading');
+      target.classList.add('updated');
+      target.title = 'Source: OpenAlex';
+      updated++;
+    } catch(e) {
+      target.innerHTML = '<span class="citation-dot"></span> citations: <strong>—</strong>';
+      target.classList.remove('loading');
+      target.classList.add('error');
+      target.title = 'Citation count unavailable';
+    }
+  }));
+
+  if (status) {
+    const date = data && data.lastUpdated ? ' · last Scholar update: ' + data.lastUpdated : '';
+    status.textContent = updated + ' publication records loaded' + date;
+  }
+})();
+
+
+// ---- CDO PROJECT CITATION + RESEARCH ECOSYSTEM ----
+(async function updateCdoProjectCitation(){
+  const target = document.getElementById('cdoCitationStat');
+  if(!target) return;
+  const doi = '10.1007/s10791-025-09671-6';
+  try{
+    const response = await fetch('./data.json?ts=' + Date.now(), {cache:'no-store'});
+    if(response.ok){
+      const data = await response.json();
+      const n = Number(data?.citations?.[doi]);
+      if(Number.isFinite(n)){ target.textContent = n; return; }
+    }
+  }catch(e){}
+  try{
+    const r = await fetch('https://api.openalex.org/works/https://doi.org/' + encodeURIComponent(doi));
+    if(r.ok){
+      const w = await r.json();
+      const n = Number(w.cited_by_count);
+      if(Number.isFinite(n)) target.textContent = n;
+    }
+  }catch(e){}
+})();
+</script>
+</body>
+</html>
