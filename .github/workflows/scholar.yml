@@ -1,0 +1,45 @@
+name: Hourly Google Scholar Updater
+
+on:
+  schedule:
+    - cron: '0 * * * *' # اجرا به صورت اتوماتیک سرِ هر ساعت
+  workflow_dispatch: # امکان اجرای دستی با یک کلیک
+
+permissions:
+  contents: write
+
+jobs:
+  update-scholar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Fetch Google Scholar Stats & Save JSON
+        run: |
+          node -e '
+          const https = require("https");
+          const fs = require("fs");
+          const url = "https://scholar.google.com/citations?user=9I4M7okAAAAJ&hl=en";
+          https.get(url, { headers: { "User-Agent": "Mozilla/5.0" } }, (res) => {
+            let html = "";
+            res.on("data", chunk => html += chunk);
+            res.on("end", () => {
+              const nums = [...html.matchAll(/class="gsc_rsb_std">(\d+)<\/td>/g)].map(m => Number(m[1]));
+              const payload = {
+                citations: nums[0] || 0,
+                hIndex: nums[2] || 0,
+                i10Index: nums[4] || 0,
+                updatedAt: new Date().toISOString()
+              };
+              fs.writeFileSync("scholar-stats.json", JSON.stringify(payload, null, 2));
+            });
+          });
+          '
+
+      - name: Commit updated stats
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add scholar-stats.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: hourly scholar stats update" && git push)
